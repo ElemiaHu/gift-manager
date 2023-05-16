@@ -1,0 +1,602 @@
+*, *::after, *::before {
+  box-sizing: border-box;
+}
+
+span {
+  display: inline-block;
+}
+
+.App {
+  width: 100%;
+  min-height: 100vh;
+  padding-bottom: 10px;
+
+  font-family: 'Poppins', sans-serif;
+  background-color: #efefef;
+}
+
+.loading {
+  height: 90vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Login CSS */
+.login-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding-top: 30px;
+}
+
+.login-intro {
+  text-align: center;
+  font-size: 60px;
+  font-family: 'Dongle', sans-serif;
+}
+
+.login-image {
+  width: 350px;
+}
+
+.login-form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.login-form .error {
+  color: red;
+  font-weight: 600;
+  font-size: 16px;
+  height: 40px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.login-input {
+  width: 300px;
+  height: 40px;
+  padding: 3px 10px;
+  margin-bottom: 10px;
+  border-radius: 5px;
+  border: 0.5px solid gray;
+}
+
+.login-input:focus {
+  outline: none;
+  transition: 100ms;
+  box-shadow: 0 0 5px #999B84;
+}
+
+.login-button {
+  width: 300px;
+  height: 40px;
+  font-size: 16px;
+  font-weight: 700;
+  background-color: #999B84;
+  color: white;
+  border: none;
+  border-radius: 5px;
+}
+
+.login-button:hover {
+  border: 2px solid #999B84;
+  background-color: white;
+  color: #999B84;
+}
+
+.intro {
+  text-align: center;
+  margin-top: 30px;
+  line-height: 2;
+}
+
+/* Main Page CSS */
+.guide-container {
+  width: 100%;
+  padding: 8px 10px 8px 40px;
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  background-color: white;
+  box-shadow: 0 0 3px gray;
+}
+
+.guide-container .username {
+  max-width: 250px;
+  color: rgb(55, 55, 55);
+  font-weight: bold;
+  font-size: 20px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+button {
+  font-family: 'Poppins', sans-serif;
+}
+
+.logout-button {
+  width: 150px;
+  height: 30px;
+
+  background-color: crimson;
+  color: white;
+  border: none;
+  border-radius: 8px;
+
+  font-weight: 700;
+  font-size: 14px;
+}
+
+.logout-button:hover {
+  background-color: white;
+  border: 2.5px solid crimson;
+  color: crimson;
+}
+
+.page-selector {
+  margin: 20px 0 0 20px;
+}
+
+.page-selector button {
+  color: white;
+
+  font-weight: 700;
+  font-size: 16px;
+
+  border: none;
+  border-radius: 5px 5px 0 0;
+  margin-right: 10px;
+  padding: 5px 20px;
+}
+
+.personal-button {
+  background-color: #999B84;
+}
+
+.friends-button {
+  background-color: #91aec4;
+}
+
+.page-container {
+  padding:0 20px;
+}
+
+/* Personal Page CSS */
+.personal-container {
+  border: 3px solid #999B84;
+  border-radius: 0 10px 10px 10px;
+  padding: 0px 20px 30px 20px;
+  background-image: linear-gradient(to right bottom,#bbbe9c, #f4efec);
+}
+
+.personal-container .error {
+  color: red;
+  font-weight: 600;
+  font-size: 16px;
+  height: 40px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.personal-container .title {
+  text-align: center;
+  font-weight: 600;
+  font-size: 18px;
+  color: rgb(55, 55, 55);
+}
+
+.personal-info {
+  display: grid;
+  grid-template-columns: auto 1fr;
+  column-gap: 15px;
+  color: rgb(55, 55, 55);
+}
+
+/* birthday CSS */
+.birthday-container {
+  width: 220px;
+  padding: 10px;
+  margin-bottom: 10px;
+  border-radius: 15px;
+  background-color: white;
+  box-shadow: 10px 10px 10px -5px rgba(0,0,0,0.15);
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.birthday-title {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+
+  color: rgb(55, 55, 55);
+  font-weight: 600;
+  font-size: 18px;
+}
+
+.birthday-title button {
+  margin-left: 10px;
+  width: fit-content;
+  background: none;
+  border: none;
+  font-size: 14px;
+}
+
+.birthday-title button:hover {
+  color: rgb(65,131,193);
+  text-decoration: underline;
+}
+
+.update-birthday {
+  margin: 20px 0;
+}
+
+.update-birthday input {
+  border: 0.5px solid gray;
+  border-radius: 5px;
+
+  height: 30px;
+  padding: 2px 5px;
+  margin-right: 10px;
+  font-size: 14px;
+}
+
+.update-birthday input:focus {
+  border: 0.5px solid #91aec4;
+  outline: none;
+  box-shadow: 0 0 5px #91aec4;
+}
+
+.update-birthday button {
+  width: 80px;
+  height: 30px;
+  padding: 2px 8px;
+
+  border: none;
+  border-radius: 5px;
+  background-color: rgb(65,131,193);
+  color: white;
+}
+
+.update-birthday button:hover {
+  background-color: white;
+  border: 2px solid rgb(65,131,193);
+  color: rgb(65,131,193);
+}
+
+.no-birthday-info, .birthday-info {
+  line-height: 2;
+  text-align: center;
+}
+
+.birthday-info-container .birthday {
+  text-align: center;
+  margin: 10px 0;
+  font-size: 20px;
+  font-weight: bolder;
+  color: #999B84;
+}
+
+.birthday-info-container .countdown {
+  text-align: center;
+}
+
+.countdown span {
+  font-size: 20px;
+  font-weight: bolder;
+  color: #999B84;
+}
+
+.birthday-container img {
+  width: 180px;
+  margin-top: 20px;
+}
+
+/* Gift List CSS */
+.gift-list-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  border-radius: 15px;
+  background-color: white;
+  box-shadow: 10px 10px 10px -5px rgba(0,0,0,0.15);
+}
+
+.gift-list-container .title {
+  margin-top: 10px;
+}
+
+.add-gift-container {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.add-gift-input {
+  width: 250px;
+  height: 40px;
+  margin-right: 5px;
+  margin-top: 10px;
+  padding: 5px 10px;
+  border: 0.5px solid gray;
+  border-radius: 5px;
+
+  font-size: 16px;
+}
+
+.add-gift-input:focus {
+  outline: none;
+  border: 0.5px solid rgb(65,131,193);
+  box-shadow: 0 0 5px rgb(65,131,193);
+}
+
+.add-gift-button {
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  padding: 0 20px;
+  margin-top: 10px;
+
+  width: 140px;
+  height: 40px;
+
+  background-color: rgb(65,131,193);
+  color: whitesmoke;
+  border: none;
+  border-radius: 10px;
+
+  font-size: 16px;
+}
+
+.add-gift-button:hover {
+  background-color: white;
+  color: rgb(65,131,193);
+  border: 2px solid rgb(65,131,193);
+}
+
+.gifts {
+  overflow-y: auto;
+  height: 60vh;
+}
+
+.gifts .empty {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  margin: 30px 0;
+}
+
+.gifts .empty img {
+  width: 200px;
+}
+
+.gifts .empty div {
+  margin: 10px;
+}
+
+/* Gift Item CSS */
+.gift-item {
+  display: flex;
+  align-items: center;
+
+  width: 400px;
+  height: 40px;
+  margin: 5px 0;
+}
+
+.gg-gift {
+  margin-right: 10px;
+}
+
+.gift-item form {
+  display: inline-block;
+}
+
+.gift-item .edit {
+  display: flex;
+  align-items: center;
+}
+
+.gift-content, .edit-gift-input, .claimed-gift-content {
+  display: inline-block;
+  width: 230px;
+  max-height: 30px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  margin-right: 5px;
+}
+
+.edit-gift-input {
+  height: 30px;
+  font-size: 14px;
+  font-family: 'Poppins', sans-serif;
+}
+
+.edit-button, .delete-button {
+  width: 60px;
+  height: 30px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  border: none;
+  border-radius: 5px;
+  color: white;
+}
+
+.edit-button {
+  background-color: #999B84;
+  margin-right: 5px;
+}
+
+.edit-button:hover {
+  background-color: white;
+  border: 2px solid #999B84;
+  color: #999B84;
+}
+
+.delete-button {
+  background-color: crimson;
+}
+
+.delete-button:hover {
+  background-color: white;
+  border: 2px solid crimson;
+  color: crimson;
+}
+
+@media  screen and (max-width: 800px) {
+  .personal-info {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .birthday-container {
+    width: 100%;
+  }
+}
+
+/* Friends Page CSS */
+.friends-container {
+  border: 3px solid #91aec4;
+  border-radius: 0 10px 10px 10px;
+  color: rgb(55, 55, 55);
+
+  min-height: 80vh;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  font-size: 17px;
+}
+
+.search-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  margin: 15px 0;
+}
+
+.search-container img {
+  width: 150px;
+}
+
+.search-container .error {
+  color: red;
+  font-weight: 600;
+  font-size: 16px;
+  height: 40px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.friend-input {
+  width: 350px;
+  height: 40px;
+  border-radius: 5px;
+  border: 0.5px solid #91aec4;
+
+  padding: 2px 10px;
+  font-size: 16px;
+}
+
+.friend-input:focus {
+  outline: none;
+  box-shadow: 0 0 5px #91aec4;
+}
+
+.friend-data {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  padding: 20px 10px;
+  margin-bottom: 20px;
+  border-radius: 10px;
+  background-color: white;
+  box-shadow: 10px 10px 10px -5px rgba(0,0,0,0.15);
+}
+
+.friend-data .no-data {
+  text-align: center;
+}
+
+.friend-username {
+  font-weight: bold;
+  font-size: 20px;
+  color: rgb(55, 55, 55);
+}
+
+.friend-data .birthday, .friend-data .countdown span {
+  color: #91aec4;
+  font-size: 20px;
+}
+
+.friend-gifts {
+  margin: 20px 0;
+  max-height: 40vh;
+  overflow-y: auto;
+}
+
+.friend-gift-item {
+  height: 30px;
+  margin-bottom: 15px;
+  padding: 15px 10px;
+  border-radius: 5px;
+  border-bottom: 0.5px solid gray;
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.friend-gift-content {
+  margin-right: 5px;
+  max-width: 200px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.friend-gift-item button {
+  width: 65px;
+  margin-left: 5px;
+  font-size: 14px;
+  font-weight: bold;
+  background-color: #91aec4;
+  border: none;
+  border-radius: 5px;
+  color: white;
+}
+
+.friend-gift-item button:hover {
+  border: 2px solid #91aec4;
+  background-color: white;
+  color: #91aec4;
+}
+
+.unclaimed-gift, .claimed-gift {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
